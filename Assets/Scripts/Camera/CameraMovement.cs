@@ -52,6 +52,7 @@ namespace Buttons
             if (_isMoving)
             {
                 MoveCamera();
+                print("IsMovenig");
                 leftButton.SetActive(false);
                 righttButton.SetActive(false);
             }
@@ -82,6 +83,7 @@ namespace Buttons
         {
             Transform target = _flybyPoints[_currentPos];
             float step = PlayerPrefs.GetInt("CameraSpeed") * Time.deltaTime;
+            print(step);
 
             _camera.transform.position = Vector3.Slerp(_camera.transform.position, target.position, step);
             _camera.transform.rotation = Quaternion.Slerp(_camera.transform.rotation, target.rotation, step);
@@ -89,6 +91,7 @@ namespace Buttons
             if (Vector3.Distance(_camera.transform.position, target.position) < 0.1 &&
                 Quaternion.Angle(_camera.transform.rotation, target.rotation) < 0.1f)
             {
+                print("Distance = 0");
                 _isMoving = false;
             }
         }
