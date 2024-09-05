@@ -25,8 +25,13 @@ namespace FreeFly
         {
             if (!Input.GetButton("Fire2"))
             {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
                 return;
             }
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
 
             forwardBackward_f = Input.GetAxis("Vertical");
             rightLeft_f = Input.GetAxis("Horizontal");
