@@ -3,21 +3,17 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Snapshots
+namespace Snap
 {
-    public class SnapShots : MonoBehaviour
+    public class SnapshotsOLD : MonoBehaviour
     {
         public Camera configCamera; // Камера для конфигурационной сцены
-        public Camera otherCamera;  // Другая камера
+        public Camera mainCamera;  // Другая камера
         public GameObject canvasConfig;
-        //public Button makeShapshot;
-        //public Button clearShapshot;
-        //public GameObject speedSlider;
-        //public GameObject speedText;
+
         public string saveFileName = "snapshots.json"; // Имя файла для сохранения
 
-        public List<GameObject> SnapShotobjects = new List<GameObject>();
-
+        public List<GameObject> SnapshotObjects = new List<GameObject>();
         private List<CameraData> savedSnapshots = new List<CameraData>();
 
         private void OnEnable()
@@ -37,16 +33,16 @@ namespace Snapshots
             canvasConfig.gameObject.SetActive(!canvasConfig.gameObject.activeInHierarchy);
 
             configCamera.gameObject.SetActive(!configCamera.gameObject.activeInHierarchy);
-            otherCamera.gameObject.SetActive(!otherCamera.gameObject.activeInHierarchy);
+            mainCamera.gameObject.SetActive(!mainCamera.gameObject.activeInHierarchy);
             //makeShapshot.gameObject.SetActive(!makeShapshot.gameObject.activeInHierarchy);
             //clearShapshot.gameObject.SetActive(!clearShapshot.gameObject.activeInHierarchy);
 
             //speedSlider.gameObject.SetActive(!speedSlider.gameObject.activeInHierarchy);
             //speedText.gameObject.SetActive(!speedText.gameObject.activeInHierarchy);
 
-            for (int i = 0; i < SnapShotobjects.Count; i++)
+            for (int i = 0; i < SnapshotObjects.Count; i++)
             {
-                SnapShotobjects[i].SetActive(!SnapShotobjects[i].activeInHierarchy);
+                SnapshotObjects[i].SetActive(!SnapshotObjects[i].activeInHierarchy);
             }
         }
 
@@ -72,10 +68,10 @@ namespace Snapshots
             var textComponent = snaphotObj.GetComponentInChildren<Text>();
             if (textComponent != null)
             {
-                textComponent.text = (SnapShotobjects.Count + 1).ToString();
+                textComponent.text = (SnapshotObjects.Count + 1).ToString();
             }
 
-            SnapShotobjects.Add(snaphotObj);
+            SnapshotObjects.Add(snaphotObj);
         }
 
         public void ClearSnapshots()
@@ -84,11 +80,11 @@ namespace Snapshots
             SaveToFile(); // Сохраняем пустой список в файл
             Debug.Log("JSON файл очищен.");
 
-            for (int i = 0; i < SnapShotobjects.Count; i++)
+            for (int i = 0; i < SnapshotObjects.Count; i++)
             {
-                DestroyImmediate(SnapShotobjects[i], true);
+                DestroyImmediate(SnapshotObjects[i], true);
             }
-            SnapShotobjects.Clear(); // Очищаем список объектов
+            SnapshotObjects.Clear(); // Очищаем список объектов
         }
 
         private void SaveToFile()
@@ -118,15 +114,15 @@ namespace Snapshots
 
         private void LoadSnapshots()
         {
-            SnapShotobjects.Clear(); // Очищаем список объектов перед загрузкой
+            SnapshotObjects.Clear(); // Очищаем список объектов перед загрузкой
             foreach (var snapshot in savedSnapshots)
             {
                 MakeSnapShotObj(snapshot);
             }
 
-            for (int i = 0; i < SnapShotobjects.Count; i++)
+            for (int i = 0; i < SnapshotObjects.Count; i++)
             {
-                SnapShotobjects[i].SetActive(!SnapShotobjects[i].activeInHierarchy);
+                SnapshotObjects[i].SetActive(!SnapshotObjects[i].activeInHierarchy);
             }
         }
 

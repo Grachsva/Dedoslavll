@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Buttons
+namespace Snap
 {
-    interface ISnapshotable
+    public class Snapshot : MonoBehaviour, ISnapshotable
     {
         
     }

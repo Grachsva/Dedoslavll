@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Snap;
 
 namespace Buttons
 {
@@ -19,7 +20,7 @@ namespace Buttons
         public bool _isMoving;
         private bool _continuousMode;
 
-        private void Start()
+        private void OnEnable()
         {
             FindSnapshots();
             _camera = Camera.main;
@@ -31,7 +32,7 @@ namespace Buttons
         {
             _flybyPoints.Clear();
             // Находим все объекты типа Snapshot, включая неактивные
-            var snapshotObjects = GameObject.FindObjectsOfType<Snapshot>(true);
+            var snapshotObjects = FindObjectsOfType<Snapshot>(true);
 
             // Очищаем текущий список и заполняем его трансформами найденных объектов
             _flybyPoints.Clear();
@@ -52,7 +53,6 @@ namespace Buttons
             if (_isMoving)
             {
                 MoveCamera();
-                print("IsMovenig");
                 leftButton.SetActive(false);
                 righttButton.SetActive(false);
             }
@@ -83,7 +83,6 @@ namespace Buttons
         {
             Transform target = _flybyPoints[_currentPos];
             float step = PlayerPrefs.GetInt("CameraSpeed") * Time.deltaTime;
-            print(step);
 
             _camera.transform.position = Vector3.Slerp(_camera.transform.position, target.position, step);
             _camera.transform.rotation = Quaternion.Slerp(_camera.transform.rotation, target.rotation, step);
@@ -91,7 +90,6 @@ namespace Buttons
             if (Vector3.Distance(_camera.transform.position, target.position) < 0.1 &&
                 Quaternion.Angle(_camera.transform.rotation, target.rotation) < 0.1f)
             {
-                print("Distance = 0");
                 _isMoving = false;
             }
         }
