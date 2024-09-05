@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using static UnityEditorInternal.VersionControl.ListControl;
 
 namespace Snap
 {
