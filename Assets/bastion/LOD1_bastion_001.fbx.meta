@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MI_wood_raw_bright
-    second: {fileID: 2100000, guid: 7b5cdf7d9a6a8ce43bcf38acadd66f23, type: 2}
+    second: {fileID: 2100000, guid: b0604d3de09defd489b2658dfa183b83, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -17,8 +17,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: NEW
+    second: {fileID: 2100000, guid: b0604d3de09defd489b2658dfa183b83, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: redwood
-    second: {fileID: 2100000, guid: 8e088b27d906d1e428910b446dc6facc, type: 2}
+    second: {fileID: 2100000, guid: d85a92a0413a934458b09d591c684a59, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
