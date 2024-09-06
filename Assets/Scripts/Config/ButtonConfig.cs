@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Snapshots
+namespace Snap
 {
     public class ButtonConfig : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
