@@ -57,14 +57,16 @@ namespace Buttons
         {
             if (_isMoving)
             {
-                e_CameraMoving();
+                if (e_CameraMoving != null)
+                    e_CameraMoving();
                 MoveCamera();
                 leftButton.SetActive(false);
                 righttButton.SetActive(false);
             }
             else
             {
-                e_CameraMoved();
+                if (e_CameraMoved != null)
+                    e_CameraMoved();
                 leftButton.SetActive(true);
                 righttButton.SetActive(true);
             }
