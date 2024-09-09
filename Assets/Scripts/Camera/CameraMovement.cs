@@ -10,7 +10,7 @@ namespace Buttons
         //[SerializeField] private float _speedMotion;
         [SerializeField] private Transform _startPos;
         [SerializeField] private List<Transform> _flybyPoints = new List<Transform>();
-        [SerializeField] private int _currentPos;
+        public int _currentPos;
 
         [SerializeField] private GameObject leftButton;
         [SerializeField] private GameObject righttButton;
