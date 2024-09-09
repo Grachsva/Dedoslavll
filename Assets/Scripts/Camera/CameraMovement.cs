@@ -12,6 +12,11 @@ namespace Buttons
         [SerializeField] private List<Transform> _flybyPoints = new List<Transform>();
         public int _currentPos;
 
+        public delegate void CameraMoved();
+        public delegate void CameraMoving();
+        public static event CameraMoved e_CameraMoved;
+        public static event CameraMoving e_CameraMoving;
+
         [SerializeField] private GameObject leftButton;
         [SerializeField] private GameObject righttButton;
 
@@ -52,12 +57,14 @@ namespace Buttons
         {
             if (_isMoving)
             {
+                e_CameraMoving();
                 MoveCamera();
                 leftButton.SetActive(false);
                 righttButton.SetActive(false);
             }
             else
             {
+                e_CameraMoved();
                 leftButton.SetActive(true);
                 righttButton.SetActive(true);
             }
@@ -77,6 +84,7 @@ namespace Buttons
 
             _currentPos = (_currentPos - 1 + _flybyPoints.Count) % _flybyPoints.Count;
             _isMoving = true;
+            
         }
 
         private void MoveCamera()
@@ -91,6 +99,7 @@ namespace Buttons
                 Quaternion.Angle(_camera.transform.rotation, target.rotation) < 0.1f)
             {
                 _isMoving = false;
+               
             }
         }
     }

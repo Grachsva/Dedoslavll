@@ -21,7 +21,14 @@ namespace Buttons
             _cameraMovement = FindObjectOfType<CameraMovement>();
         }
 
-        private void Update()
+        void OnEnable()
+        {
+            CameraMovement.e_CameraMoved += ChangeMarkers;
+            CameraMovement.e_CameraMoving += ChangeMarkers;
+        }
+
+
+        public void ChangeMarkers()
         {
             if (_cameraMovement._isMoving)
             {
@@ -34,14 +41,8 @@ namespace Buttons
                 marksers_6.SetActive(false);
                 return;
             }
-            else
-            {
-                ChangeMarkers();
-            }
-        }
+       
 
-        public void ChangeMarkers()
-        {
             if (_cameraMovement._currentPos == 0)
             {
                 marksers_0.SetActive(true);
