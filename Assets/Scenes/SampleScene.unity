@@ -32470,7 +32470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultPage: 1
-  ShowPagination: 1
+  ShowPagination: 0
   ShowFirstAndLastButtons: 0
   ShowPreviousAndNextButtons: 1
   MaximumNumberOfButtonsToShow: 6
