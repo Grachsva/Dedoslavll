@@ -2,11 +2,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Snap;
+using System;
+using System.Runtime.InteropServices;
 
 namespace Buttons
 {
     public class CameraMovement : MonoBehaviour
     {
+        // Importing WinAPI functions
+        [DllImport("user32.dll")]
+        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+
+        // Constants for ShowWindow function
+        private const int SW_HIDE = 0;
+        private const int SW_SHOW = 5;
+
         //[SerializeField] private float _speedMotion;
         [SerializeField] private Transform _startPos;
         [SerializeField] private List<Transform> _flybyPoints = new List<Transform>();
@@ -59,6 +72,7 @@ namespace Buttons
             {
                 if (e_CameraMoving != null)
                     e_CameraMoving();
+
                 MoveCamera();
                 leftButton.SetActive(false);
                 righttButton.SetActive(false);
@@ -67,6 +81,8 @@ namespace Buttons
             {
                 if (e_CameraMoved != null)
                     e_CameraMoved();
+                //  амера статична, останавливаем рендеринг
+   
                 leftButton.SetActive(true);
                 righttButton.SetActive(true);
             }

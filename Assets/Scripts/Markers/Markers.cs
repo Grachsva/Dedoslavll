@@ -39,7 +39,26 @@ namespace Buttons
                 marksers_4.SetActive(false);
                 marksers_5.SetActive(false);
                 marksers_6.SetActive(false);
+
+                Time.timeScale = 1f;
+                //print("play");
+                //Time.timeScale = 1;
+                //Application.targetFrameRate = 60; // ¬осстанавливаем рендеринг до нормального значени€
+                //if (Camera.main != null)
+                //    Camera.main.enabled = true;
+
                 return;
+            }
+
+            else
+            {
+                Time.timeScale = 0f;
+                Application.Unload();
+                //print("stop");
+                //Time.timeScale = 0;
+                //Application.targetFrameRate = 1;  // ќграничение до 1 кадра в секунду
+                //if (Camera.main != null)
+                //    Camera.main.enabled = false;
             }
        
 

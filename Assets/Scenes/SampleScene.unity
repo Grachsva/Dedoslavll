@@ -10856,6 +10856,7 @@ GameObject:
   - component: {fileID: 655373152}
   - component: {fileID: 655373153}
   - component: {fileID: 655373154}
+  - component: {fileID: 655373155}
   m_Layer: 0
   m_Name: Config
   m_TagString: Untagged
@@ -10902,6 +10903,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7df0df7e11f358b41ae2468aeccf8a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &655373155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655373150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1894c0102be65e44bb791438dc984c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &671888195
@@ -11783,6 +11796,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 269984658669998285, guid: 2e4c21c7242c97346a7c29442d8b32d0,
+        type: 3}
+      propertyPath: weight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 269984658669998285, guid: 2e4c21c7242c97346a7c29442d8b32d0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 618320355909760781, guid: 2e4c21c7242c97346a7c29442d8b32d0,
         type: 3}
       propertyPath: m_Name
@@ -11792,6 +11815,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3823765809915406641, guid: 2e4c21c7242c97346a7c29442d8b32d0,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8039898587405170640, guid: 2e4c21c7242c97346a7c29442d8b32d0,
         type: 3}
@@ -17332,7 +17360,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1078347755}
-  - component: {fileID: 1078347756}
   m_Layer: 0
   m_Name: Markers
   m_TagString: Untagged
@@ -17364,25 +17391,6 @@ Transform:
   - {fileID: 1878991303}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1078347756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078347754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94501389fdc377049aaa729b9f4fcfd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  marksers_0: {fileID: 0}
-  marksers_1: {fileID: 0}
-  marksers_2: {fileID: 0}
-  marksers_3: {fileID: 0}
-  marksers_4: {fileID: 0}
-  marksers_5: {fileID: 0}
-  marksers_6: {fileID: 0}
 --- !u!1 &1082367644
 GameObject:
   m_ObjectHideFlags: 0
@@ -29678,9 +29686,9 @@ MonoBehaviour:
   screenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
   allowDeepLearningSuperSampling: 1
   deepLearningSuperSamplingUseCustomQualitySettings: 0
-  deepLearningSuperSamplingQuality: 0
+  deepLearningSuperSamplingQuality: 3
   deepLearningSuperSamplingUseCustomAttributes: 0
-  deepLearningSuperSamplingUseOptimalSettings: 1
+  deepLearningSuperSamplingUseOptimalSettings: 0
   deepLearningSuperSamplingSharpening: 0
   fsrOverrideSharpness: 0
   fsrSharpness: 0.92
@@ -30378,7 +30386,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
