@@ -10917,6 +10917,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1894c0102be65e44bb791438dc984c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 0}
+  waitTime: 0
 --- !u!1 &671888195
 GameObject:
   m_ObjectHideFlags: 0
@@ -28830,7 +28832,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: "file://C:/Projects/Appollo Digital/Projects 2024/UnityProjects/Kurgan/Assets/StreamingAssets/Video/\xAB\u0420\u0430\u0432\u043D\u0435\u043D\u0438\u0435_\u043D\u0430_\u0417\u043D\u0430\u043C\u044F_\u041F\u043E\u0431\u0435\u0434\u044B\xBB_\u043D\u0430_\u041A\u0443\u0440\u0433\u0430\u043D\u0435_\u0411\u0435\u0441\u0441\u043C\u0435\u0440\u0442\u0438\u044F_\u0410\u043F\u0440\u0435\u043B\u044C_20232.mp4"
+  m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
