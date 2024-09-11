@@ -10,6 +10,9 @@ namespace SliderPages
 {
     public class FillVideo : MonoBehaviour
     {
+        public delegate void VideoReady(Page page);
+        public static event VideoReady e_VideoReady;
+
         private PagedRect _pagedRect;
         private PagesStream _streams;
 
@@ -58,6 +61,7 @@ namespace SliderPages
             string videoPath = _streams.VideoFiles[numberSlide];
             videoPlayer.url = videoPath;
             videoPlayer.Play();
+            e_VideoReady(page);
         }
     }
 }
