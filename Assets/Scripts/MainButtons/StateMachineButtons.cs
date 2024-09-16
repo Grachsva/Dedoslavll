@@ -86,12 +86,13 @@ namespace StateMachine
                     MarkersVisible(true);
                     _canvasVideo.SetActive(false);
                     DisactivateAllCanvasesSlider();
+                    FindObjectOfType<MarkersHide>().ResetMarkers();
                     break;
 
                 case States.Slider:
                     ActivateButtons(SpritesForImagesDisabled, false);
                     _buttonSlider.GetComponent<Image>().sprite = _close; // Кнопка крестик вместо Info
-                    MarkersVisible(false);
+                    //MarkersVisible(false);
                     break;
 
                 case States.VideoPlayer:
