@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace StateMachine
 {
-    [ExecuteAlways]
+    //[ExecuteAlways]
     public class StateMachineButtons : MonoBehaviour
     {
         private Dictionary<Image, Sprite> SpritesForImagesEnabled = new Dictionary<Image, Sprite>();
@@ -107,11 +107,12 @@ namespace StateMachine
         private IEnumerator TimerCoroutine()
         {
             timerIsRunning = true;
-            while (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-                yield return null; // ќжидание до следующего кадра
-            }
+            //while (timeRemaining > 0)
+            //{
+            //    timeRemaining -= Time.deltaTime;
+            //    yield return null; // ќжидание до следующего кадра
+            //}
+            yield return new WaitForSeconds(timeRemaining);
             timeRemaining = 0;
             TimerFinished();
             timerIsRunning = false;

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace StateMachine
 {
-    [ExecuteAlways]
+    //[ExecuteAlways]
     //[InitializeOnLoad]
     public class ButtonListeners : MonoBehaviour
     {

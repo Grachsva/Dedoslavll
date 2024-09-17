@@ -41,8 +41,9 @@ namespace StateMachine
                 Transform extraPanel = parentTransform.GetChild(2);
                 extraPanel.gameObject.SetActive(isActive); // Отображаем доп панель только для нажатой кнопки
 
-                SetSliderState();
+                
             }
+            SetSliderState();
         }
 
         public void ResetMarkers()
@@ -72,6 +73,7 @@ namespace StateMachine
         private void SetSliderState()
         {
             FindObjectOfType<StateMachineButtons>().ChangeState(States.Slider);
+            FindAnyObjectByType<StateMachineButtons>().ResetTimer(5f);
         }
     }
 }
