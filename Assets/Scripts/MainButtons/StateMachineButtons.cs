@@ -104,15 +104,34 @@ namespace StateMachine
             }
         }
 
+        private void OnApplicationPause(bool pause)
+        {
+            Debug.Log("OnApplicationPause: " + pause);
+            if (pause)
+            {
+                // Код обработки паузы
+            }
+            else
+            {
+                // Код обработки возобновления
+            }
+        }
+
         private IEnumerator TimerCoroutine()
         {
+            Time.timeScale = 1; // Поиск
+            Debug.Log("Starting TimerCoroutine. TimeRemaining: " + timeRemaining);
             timerIsRunning = true;
-            //while (timeRemaining > 0)
-            //{
-            //    timeRemaining -= Time.deltaTime;
-            //    yield return null; // Ожидание до следующего кадра
-            //}
+
+            // Проверяем состояние Time.timeScale
+            Debug.Log("Time.timeScale: " + Time.timeScale);
+
+            // Ждем заданное количество времени
             yield return new WaitForSeconds(timeRemaining);
+
+            // Логируем состояние по завершении ожидания
+            Debug.Log("WaitForSeconds finished. TimeRemaining: " + timeRemaining);
+
             timeRemaining = 0;
             TimerFinished();
             timerIsRunning = false;
@@ -157,7 +176,6 @@ namespace StateMachine
             foreach (var button in sprites.Keys)
             {
                 button.sprite = sprites[button];
-                print(button.name);
                 ButtonLeft buttonLeft = button.GetComponent<ButtonLeft>();
                 ButtonRight buttonRight = button.GetComponent<ButtonRight>();
 

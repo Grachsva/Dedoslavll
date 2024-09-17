@@ -50,16 +50,16 @@ namespace Buttons
                 return;
             }
 
-            else
-            {
-                Time.timeScale = 0f;
-                Application.Unload();
-                //print("stop");
-                //Time.timeScale = 0;
-                //Application.targetFrameRate = 1;  // Ограничение до 1 кадра в секунду
-                //if (Camera.main != null)
-                //    Camera.main.enabled = false;
-            }
+            //else
+            //{
+            //    Time.timeScale = 0f;
+            //    Application.Unload();
+            //    //print("stop");
+            //    //Time.timeScale = 0;
+            //    //Application.targetFrameRate = 1;  // Ограничение до 1 кадра в секунду
+            //    //if (Camera.main != null)
+            //    //    Camera.main.enabled = false;
+            //}
        
 
             if (_cameraMovement._currentPos == 0)
